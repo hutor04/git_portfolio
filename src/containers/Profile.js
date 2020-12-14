@@ -41,14 +41,12 @@ const Profile = () => {
   });
 
   useEffect(() => {
-    if (!loading && !error) {
-      setItems([
-        { label: 'Prifile on Github', value: <Link url={data.html_url} title='Github URL' /> },
-        { label: 'name', value: data.name},
-        { label: 'location', value: data.location },
-      ]);
-    }
-  }, [loading, error, data]);
+    setItems([
+      { label: 'Prifile on Github', value: <Link url={data.html_url} title='Github URL' /> },
+      { label: 'name', value: data.name},
+      { label: 'location', value: data.location },
+    ]);
+  }, [data]);
 
   if (loading) {
     return <div>Loading...</div>
